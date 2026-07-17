@@ -42,7 +42,7 @@ export function Team() {
               ))}
             </div>
 
-            <blockquote className="mt-10 border-l-2 border-ember-500 pl-6 font-display text-2xl italic leading-snug text-forest-700">
+            <blockquote className="mt-10 border-l-2 border-ember-500 pl-6 font-display text-2xl leading-snug text-forest-700">
               «Простір, у якому дорослий — не наглядач,
               а свідок і супровідник».
             </blockquote>

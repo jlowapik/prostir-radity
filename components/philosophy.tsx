@@ -172,10 +172,12 @@ export function Philosophy() {
               Філософія
             </p>
 
-            <h2 className="reveal font-display text-2xl leading-snug text-forest-700 md:text-[1.75rem]">
-              <span className="text-[1.35em] text-ember-500">Простір РаДіти</span>{" "}
-              — це просвітницький проект, який закликає дітей бути відкритими
-              до світу.
+            <h2 className="reveal max-w-[42ch] text-xl leading-relaxed text-forest-700 md:text-[1.375rem]">
+              <span className="font-display text-[1.5em] font-medium text-ember-500">
+                Простір РаДіти
+              </span>
+              {" "}— це просвітницький проект, який закликає дітей бути
+              відкритими до світу.
             </h2>
           </div>
 
