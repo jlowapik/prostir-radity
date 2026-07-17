@@ -13,12 +13,10 @@ const PRINCIPLES = [
   },
 ];
 
-const SUN_X_PERCENT = 88; // horizontal position of sun (% from left)
-const SUN_Y_PERCENT = 12; // vertical position of sun (% from top)
+const SUN_X_PERCENT = 88;
+const SUN_Y_PERCENT = 12;
 
 function SunRays({ className }: { className?: string }) {
-  // Rays fan out evenly from the sun. angle 0 = straight down, positive =
-  // clockwise (down → left in SVG). Step of 22° between each ray.
   const RAY_COUNT = 6;
   const RAY_STEP = 22;
   const RAY_START = -22;
@@ -55,10 +53,8 @@ function SunRays({ className }: { className?: string }) {
         </radialGradient>
       </defs>
 
-      {/* Ambient warm glow across section */}
       <rect x="0" y="0" width="1200" height="1000" fill="url(#sunHalo)" />
 
-      {/* Directional rays */}
       <g
         transform={`translate(${(SUN_X_PERCENT * 12).toFixed(0)} ${(SUN_Y_PERCENT * 10).toFixed(0)})`}
         style={{ mixBlendMode: "screen" }}
@@ -77,7 +73,6 @@ function SunRays({ className }: { className?: string }) {
   );
 }
 
-/** Back-most mountain layer (rendered BEHIND the tree). */
 function BackMountains({ className }: { className?: string }) {
   return (
     <svg
@@ -91,8 +86,6 @@ function BackMountains({ className }: { className?: string }) {
         d="M0 320 L 110 210 L 220 285 L 330 195 L 450 265 L 570 180 L 690 260 L 810 190 L 930 265 L 1050 205 L 1170 260 L 1290 200 L 1440 260 L 1440 500 L 0 500 Z"
         fill="#7ba07b"
       />
-
-      {/* Soft clouds — belong to the sky, live with the back layer */}
       <g fill="#fdfbf5" fillOpacity="0.75">
         <ellipse cx="240" cy="120" rx="60" ry="8" />
         <ellipse cx="260" cy="112" rx="45" ry="6" />
@@ -103,7 +96,6 @@ function BackMountains({ className }: { className?: string }) {
   );
 }
 
-/** Front two mountain layers (rendered IN FRONT of the tree). */
 function FrontMountains({ className }: { className?: string }) {
   return (
     <svg
@@ -113,37 +105,14 @@ function FrontMountains({ className }: { className?: string }) {
       className={className}
       aria-hidden
     >
-      {/* Mid layer */}
       <path
         d="M0 385 L 100 285 L 210 355 L 320 265 L 440 340 L 560 275 L 680 330 L 800 270 L 920 335 L 1050 280 L 1180 325 L 1310 265 L 1440 320 L 1440 500 L 0 500 Z"
         fill="#3f7040"
       />
-
-      {/* Front hills */}
       <path
         d="M0 435 L 130 370 L 260 405 L 390 360 L 530 400 L 670 365 L 810 395 L 950 360 L 1090 395 L 1230 375 L 1440 395 L 1440 500 L 0 500 Z"
         fill="#1e4520"
       />
-    </svg>
-  );
-}
-
-function CardOrnament() {
-  return (
-    <svg
-      viewBox="0 0 40 12"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.2"
-      strokeLinecap="round"
-      className="mb-3 h-3 w-10 text-ember-500"
-      aria-hidden
-    >
-      <circle cx="20" cy="6" r="2" fill="currentColor" stroke="none" />
-      <path d="M18 6 Q 14 6 12 3 Q 9 2 8 5" />
-      <path d="M22 6 Q 26 6 28 3 Q 31 2 32 5" />
-      <circle cx="8" cy="5" r="0.9" fill="currentColor" stroke="none" />
-      <circle cx="32" cy="5" r="0.9" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -197,7 +166,7 @@ export function Philosophy() {
       />
 
       <div className="container-narrow relative z-10">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <p className="reveal mb-8 font-display text-lg uppercase tracking-[0.28em] text-ember-500 md:text-xl">
               Філософія
@@ -210,7 +179,7 @@ export function Philosophy() {
             </h2>
           </div>
 
-          <div className="md:col-span-7">
+          <div className="md:col-span-7 md:pt-16">
             <p className="reveal font-display text-3xl leading-tight text-forest-800 md:text-4xl">
               Простір, де можна бути дитиною —{" "}
               <span className="italic text-ember-500">по-справжньому.</span>
@@ -239,7 +208,6 @@ export function Philosophy() {
                   key={p.title}
                   className="reveal rounded-2xl border border-forest-500/40 bg-cream-50/95 p-6 shadow-sm backdrop-blur-sm transition-colors hover:border-forest-500/60 hover:bg-cream-50"
                 >
-                  <CardOrnament />
                   <h3 className="font-display text-2xl text-forest-700">
                     {p.title}
                   </h3>
