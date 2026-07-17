@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Original hi-res source of main-background — WebP served instead
+public/images/main-background.png
